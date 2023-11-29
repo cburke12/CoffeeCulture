@@ -98,7 +98,8 @@ li, li a {
     animation-duration: 1s;
     animation-fill-mode: forwards; /* Keeps the element in the final state of the animation */
     animation-timing-function: ease-in-out;
-    padding-bottom: 4vw;
+    padding-bottom: 10vw;
+    padding-top: 10vw;
     width: 100%; /* Full width of the container */
     display: flex; /* Use flexbox for alignment */
     justify-content: center; /* Center horizontally */
@@ -137,40 +138,20 @@ li, li a {
 }
 
 /*Footer Styles*/
-footer {
-    background-color: #f8f8f8; /* Assuming a light background */
-    padding: 20px;
-    text-align: center;
+.footer-container {
+    padding: 2vw;
 }
 
-.footer-nav a, .footer-social a, .footer-legal a {
-    display: inline-block;
-    margin: 0 10px;
-    color: #333;
-    text-decoration: none;
+/* Applying the animation to the SVG */
+.footer-container svg {
+    width: 94vw;   /* 84% of viewport width */
+    max-width: 1440px;
+    height: auto; 
+    display: block;
 }
-
-.footer-legal p {
-    margin-top: 10px;
-    color: #333;
-}
-
 
 @media (max-width: 600px) {
-    .footer-social a, .footer-nav a, .footer-legal a {
-        display: block;
-        margin-bottom: 10px;
-    }
-
-    .logo, .button-v1, .button-v2, li, li a, .footer {
+    .logo, .button-v1, .button-v2, li, li a {
         font-size: 2.5vw; /* Adjusted font size for smaller screens */
     }
-}
-
-
-.footer-quote {
-    color: #ffffff;
-    padding: 2em;
-width: 100%;
-  background-color: #96c560;
 }

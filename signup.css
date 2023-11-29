@@ -226,24 +226,17 @@ button {
     /* Inherits styles from the 768px media query */
 }
 
-
 /*Footer Styles*/
-footer {
-    background-color: #f8f8f8; /* Assuming a light background */
-    padding: 20px;
-    text-align: center;
+.footer-container {
+    padding: 2vw;
 }
 
-.footer-nav a, .footer-social a, .footer-legal a {
-    display: inline-block;
-    margin: 0 10px;
-    color: #333;
-    text-decoration: none;
-}
-
-.footer-legal p {
-    margin-top: 10px;
-    color: #333;
+/* Applying the animation to the SVG */
+.footer-container svg {
+    width: 94vw;   /* 84% of viewport width */
+    max-width: 1440px;
+    height: auto; 
+    display: block;
 }
 
 
