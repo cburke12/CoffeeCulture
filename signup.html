@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up Form</title>
     <link rel="stylesheet" href="signup.css">
-    <script type="script" href="main.js" defer></script>
+    <script src="auth.js" type="module"></script>
 </head>
 <body>
     <header>
@@ -20,67 +20,109 @@
             </ul>
         </nav>
         <div class="buttons">
-            <button class="button-v2" onclick="window.location.href='signup.html';">Log in</button>
+            <button class="button-v2" onclick="window.location.href='login.html';">Log in</button>
             <button class="button-v1" onclick="window.location.href='signup.html';">Join now</button>
         </div>
     </header>
     <div class="container">
-    <div class="box">
-        <img src="images/group-of-friends-v2.png" alt="Baristas Working Together">
-    </div>
-    <div class="box">
-    <div class="signup-container">
-        <div class="form-container">
-            <h1>Sign up</h1>
-            <p>Enter your information to get started.</p>
-            <form>
-                <div class="form-field">
-                    <label for="full-name">Full name</label>
-                    <input type="text" id="full-name" placeholder="Your full name">
-                   
+        <div class="box">
+            <img src="images/group-of-friends-v2.png" alt="Baristas Working Together">
+        </div>
+        <div class="box">
+            <div class="signup-container">
+                <div class="form-container">
+                    <h1 id="form-title">Sign up</h1>
+                    <p>Enter your information to get started.</p>
+                    <form id="auth-form">
+                        <div class="form-field">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="Enter your email address">
+                        </div>
+                        <div class="form-field">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" placeholder="************">
+                        </div>
+                        <div class="form-field" id="confirm-password-field">
+                            <label for="confirm-password">Confirm password</label>
+                            <input type="password" id="confirm-password" placeholder="************">
+                        </div>
+                        <button type="submit" id="submit-button">Sign up</button>
+                    </form>
+                    <p class="login-prompt">Already have an account? <a id="loginLink" onclick="window.location.href='login.html';">Log in</a></p>
                 </div>
-                <div class="form-field">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" placeholder="Enter your email address">
-                </div>
-                <div class="form-field">
-                    <label for="username">Username</label>
-                    <input type="text" id="username" placeholder="Create a username">
-                </div>
-                <div class="form-field">
-                    <label for="password">Create a password</label>
-                    <input type="password" id="password" placeholder="************">
-                </div>
-                <div class="form-field">
-                    <label for="confirm-password">Confirm password</label>
-                    <input type="password" id="confirm-password" placeholder="************">
-                </div>
-                <div class="form-field checkbox-field">
-                    <input type="checkbox" id="terms" name="terms">
-                    <label for="terms">I agree to the Terms and Privacy Policy.</label>
-                </div>
-                <button type="submit">Sign up</button>
-            </form>
-            <p class="login-prompt">Already have an account? <a href="#" id="loginLink">Log in</a></p>
+            </div>
         </div>
     </div>
-</div>
-</div>
-<footer class="site-footer">
-    <div class="footer-content">
-        <p class="copyright">&copy; 2023 CoffeeCulture All Rights Reserved.</p>
-        <div class="footer-links">
-            <a href="https://twitter.com/yourcompany" class="social-link">Twitter</a>
-            <a href="https://facebook.com/yourcompany" class="social-link">Facebook</a>
-            <a href="https://instagram.com/yourcompany" class="social-link">Instagram</a>
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p class="copyright">&copy; 2023 CoffeeCulture All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="https://twitter.com/yourcompany" class="social-link">Twitter</a>
+                <a href="https://facebook.com/yourcompany" class="social-link">Facebook</a>
+                <a href="https://instagram.com/yourcompany" class="social-link">Instagram</a>
+            </div>
+            <div class="footer-docs">
+                <a href="/privacy-policy.html" class="doc-link">Privacy Policy</a>
+                <a href="/terms-of-service.html" class="doc-link">Terms of Service</a>
+            </div>
         </div>
-        <div class="footer-docs">
-            <a href="/privacy-policy.html" class="doc-link">Privacy Policy</a>
-            <a href="/terms-of-service.html" class="doc-link">Terms of Service</a>
-        </div>
-    </div>
-</footer>
+    </footer>
+
+    <!-- Firebase SDK Scripts and Custom Authentication Logic -->
+    <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js';
+import { getAuth, createUserWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js';
+
+const firebaseConfig = {
+    apiKey: "AIzaSyBsEX3z_XqMcLE1Rz2uIE0jRbfQGb8t5Mw",
+    authDomain: "coffeeculture-7052c.firebaseapp.com",
+    projectId: "coffeeculture-7052c",
+    storageBucket: "coffeeculture-7052c.appspot.com",
+    messagingSenderId: "780624510700",
+    appId: "1:780624510700:web:5073b7f1353cb2015b6fc9",
+    measurementId: "G-3Q8M8KB7NR"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+document.addEventListener('DOMContentLoaded', function () {
+    const signUpForm = document.getElementById('auth-form');
+    signUpForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirm-password').value;
+
+        if (password !== confirmPassword) {
+            alert("Passwords do not match.");
+            return;
+        }
+
+        createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                console.log('User created:', userCredential.user);
+                window.location.href = 'index.html'; // Redirect after successful signup
+            })
+            .catch((error) => {
+                console.error(error);
+                alert("Signup failed: " + error.message);
+            });
+    });
+
+    // Redirect to the login page
+    document.getElementById('loginLink').addEventListener('click', (e) => {
+        e.preventDefault();
+        window.location.href = 'login.html';
+    });
+});
+
+    </script>
+
 </body>
 </html>
+
 
 
