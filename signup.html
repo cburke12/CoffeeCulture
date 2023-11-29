@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form</title>
+    <link rel="stylesheet" href="signup.css">
+    <script type="script" href="main.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="logo">CoffeeCulture</a>
+            <ul id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="error.html">Search</a></li>
+                <li><a href="error.html">Explore</a></li>
+                <li><a href="error.html">Saved</a></li>
+                <li><a href="user-profile.html">Profile</a></li>
+            </ul>
+        </nav>
+        <div class="buttons">
+            <button class="button-v2" onclick="window.location.href='signup.html';">Log in</button>
+            <button class="button-v1" onclick="window.location.href='signup.html';">Join now</button>
+        </div>
+    </header>
+    <div class="container">
+    <div class="box">
+        <img src="imgs/coffee-beans.jpeg" alt="Baristas Working Together">
+    </div>
+    <div class="box">
+    <div class="signup-container">
+        <div class="form-container">
+            <h1>Sign up</h1>
+            <p>Enter your information to get started.</p>
+            <form>
+                <div class="form-field">
+                    <label for="full-name">Full name</label>
+                    <input type="text" id="full-name" placeholder="Your full name">
+                   
+                </div>
+                <div class="form-field">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter your email address">
+                </div>
+                <div class="form-field">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Create a username">
+                </div>
+                <div class="form-field">
+                    <label for="password">Create a password</label>
+                    <input type="password" id="password" placeholder="************">
+                </div>
+                <div class="form-field">
+                    <label for="confirm-password">Confirm password</label>
+                    <input type="password" id="confirm-password" placeholder="************">
+                </div>
+                <div class="form-field checkbox-field">
+                    <input type="checkbox" id="terms" name="terms">
+                    <label for="terms">I agree to the Terms and Privacy Policy.</label>
+                </div>
+                <button type="submit">Sign up</button>
+            </form>
+            <p class="login-prompt">Already have an account? <a href="#" id="loginLink">Log in</a></p>
+        </div>
+    </div>
+</div>
+</div>
+<footer class="site-footer">
+    <div class="footer-content">
+        <p class="copyright">&copy; 2023 CoffeeCulture All Rights Reserved.</p>
+        <div class="footer-links">
+            <a href="https://twitter.com/yourcompany" class="social-link">Twitter</a>
+            <a href="https://facebook.com/yourcompany" class="social-link">Facebook</a>
+            <a href="https://instagram.com/yourcompany" class="social-link">Instagram</a>
+        </div>
+        <div class="footer-docs">
+            <a href="/privacy-policy.html" class="doc-link">Privacy Policy</a>
+            <a href="/terms-of-service.html" class="doc-link">Terms of Service</a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
+
+

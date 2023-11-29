@@ -1,0 +1,127 @@
+html, body {
+    margin: 0 auto;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    max-width: 1200px;
+    justify-content: center;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    padding: 20px;
+    justify-content: baseline;
+    align-content: center;
+    background-color: #ffffff;
+    box-shadow: 2px -2px 10px rgba(3,3,3,0.1);
+    flex-direction: row;
+}
+
+/* Styles for navigation and logo */
+nav {
+    display: flex;
+    flex: 3;
+    justify-content: baseline;
+}
+
+.logo {
+    color: #030303;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 49px;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    padding-left: 5px;
+}
+
+li, li a {
+    list-style: none;
+    text-decoration: none;
+    color: #000;
+    margin: 0 3px;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 21px;
+    text-align: center;
+}
+
+/* Button Styles */
+.buttons {
+    padding-top: 10px;
+}
+
+.button-v1, .button-v2 {
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #000;
+    margin: 0;
+    font-weight: bold;
+    font-size: 10px;
+}
+
+.button-v1 {
+    background-color: #000;
+    color: #fff;
+}
+
+.button-v2 {
+    background-color: transparent;
+    color: #000;
+}
+
+/* General style for the SVG container */
+.svg-container {
+    position: relative; /* To position the button relative to this container */
+}
+
+/* Animation keyframes for fade-in from top */
+@keyframes fadeInTop {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.svg-container {
+    opacity: 0; /* Start with the SVG container invisible */
+    animation-name: fadeInTop;
+    animation-duration: 1s;
+    animation-fill-mode: forwards; /* Keeps the element in the final state of the animation */
+    animation-timing-function: ease-in-out;
+    padding: 2vw;
+}
+
+/* Applying the animation to the SVG */
+.svg-container svg {
+    animation: fadeInTop 1s ease forwards;
+}
+
+/* Button styling */
+#button-over-svg {
+    position: absolute;
+    top: 77%; /* Adjust these values based on where you want the button */
+    left: 16%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    width: 215px;
+    height: 60px;
+    padding: 0px 8px;
+    border: 0;
+    box-sizing: border-box;
+    border-radius: 2px;
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 21px;
+    outline: none;
+}

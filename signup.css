@@ -1,0 +1,289 @@
+html, body {
+    margin: 0 auto;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    max-width: 1200px;
+    justify-content: center;
+}
+
+
+/* Header Styles */
+
+header {
+    display: flex;
+    padding: 20px;
+    justify-content: baseline;
+    align-content: center;
+    background-color: #ffffff;
+    box-shadow: 2px -2px 10px rgba(3,3,3,0.1);
+    flex-direction: row;
+}
+ul{
+    display: flex;
+    flex-direction: row;
+    padding-left: 5px;
+}
+
+li, li a{
+    list-style: none;
+    text-decoration: none;
+    color: #000;
+    margin: 0 3px;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 21px;
+    text-align: center;
+}
+
+.logo {
+    color: #030303;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 49px;
+
+}
+
+nav {
+    display: flex;
+    flex: 3;
+    justify-content: baseline;
+}
+
+
+
+header .buttons {
+    padding-top: 10px;
+    display: flex;
+}
+
+.button-v1, .button-v2 {
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #000;
+    margin: 0;
+    font-weight: bold;
+    font-size: 10px;
+}
+
+.button-v1 {
+    background-color: #000;
+    color: #fff;
+}
+
+.button-v2 {
+    background-color: transparent;
+    color: #000;
+}
+
+
+
+/* Styles for images */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 20px; /* You might want to adjust this if images are inside .box */
+}
+
+/* Container for elements */
+.container {
+    display: flex;
+    flex-direction: row; /* Divs side by side */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    justify-content: space-between; /* Distribute space evenly */
+    background-color: white;
+    padding: 20px;
+    gap: 20px; /* Space between the boxes */
+    margin: 10px auto; /* Center the container with auto margins */
+    max-width: 1200px; /* Maximum width of the container */
+}
+
+/* Box styles */
+.box {
+    flex: 1; /* Boxes take up equal space */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+/* Specific container for sign up area */
+.signup-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background-size: cover;
+    background-position: left center;
+}
+
+/* Styles for the form container */
+.form-container {
+    max-width: 400px;
+    width: 100%;
+    margin: 20px;
+    padding: 40px;
+}
+
+/* Text and form field styles */
+h1,
+.form-container p,
+.login-prompt {
+    text-align: center;
+    color: #333;
+}
+
+.form-field,
+.checkbox-field {
+    margin-bottom: 20px;
+}
+
+.form-field label,
+.form-field input[type="text"],
+.form-field input[type="email"],
+.form-field input[type="password"],
+.checkbox-field input[type="checkbox"],
+button {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Input field styles */
+.form-field input[type="text"],
+.form-field input[type="email"],
+.form-field input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Checkbox styles */
+.checkbox-field {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-field input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+/* Button styles */
+.signup-container button {
+    width: 100%;
+    padding: 15px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.signup-container button:hover {
+    background-color: #444;
+}
+
+/* Link styles */
+.login-prompt a {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+.login-prompt a:hover {
+    text-decoration: underline;
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+    .container,
+    .box {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    /* Inherits styles from the 768px media query */
+}
+
+
+/*Footer Styles*/
+.site-footer {
+    background-color: #ffffff;
+    padding: 20px 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.site-footer a {
+    color: #0077cc;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.site-footer a:hover {
+    text-decoration: underline;
+}
+
+.social-link {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.social-link:last-child {
+    margin-right: 0;
+}
+
+.doc-link {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.doc-link:last-child {
+    margin-right: 0;
+}
+
+@media (max-width: 600px) {
+    .footer-links, .footer-docs {
+        display: block;
+        margin-bottom: 10px;
+    }
+}
+
+
+
+/*Media Queries*/
+
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .box {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .box {
+        width: 100%;
+    }
+}
