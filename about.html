@@ -2,7 +2,6 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="TODO">
         <meta name="description" content="A landing page of the coffee culture website">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>CoffeeCulture</title>
@@ -24,7 +23,7 @@
                 </ul>
             </nav>
             <div class="buttons">
-                <button class="button-v2" onclick="window.location.href='signup.html';">Log in</button>
+                <button class="button-v2" onclick="window.location.href='login.html';">Log in</button>
                 <button class="button-v1" onclick="window.location.href='signup.html';">Join now</button>
             </div>
         </header>
@@ -263,7 +262,7 @@
                 </g>
                 <g opacity="100%">
                   <rect filter="url(#filter_dshadow_0_0_0_00000014)" x="76" y="313" width="208" height="53" fill="#96c560" rx="18"></rect>
-                  <text x="146.5" y="345" font-family="Roboto" font-size="16" fill="#fff" letter-spacing="0" font-weight="600" font-style="normal">
+                  <text class="signup-button" x="146.5" y="345" font-family="Roboto" font-size="16" fill="#fff" letter-spacing="0" font-weight="600" font-style="normal">
                     <tspan>Join Now</tspan>
                   </text>
                 </g>
@@ -314,5 +313,16 @@
                 <p>2023 © CoffeeCulture All rights reserved.</p>
             </div>
         </footer>
+
+        <script>
+            document.querySelectorAll('.signup-button').forEach(function(svgButton) {
+                svgButton.addEventListener('click', function() {
+                    this.style.fill = 'colorOnHover'; // Replace 'colorOnHover' with the desired color
+                    window.location.href = 'signup.html';
+                });
+            });
+        </script>
+        
+        </script>
     </body>
     </html>

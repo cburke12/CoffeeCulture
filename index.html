@@ -2,7 +2,6 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="TODO">
         <meta name="description" content="A landing page of the coffee culture website">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>CoffeeCulture</title>
@@ -24,7 +23,7 @@
                 </ul>
             </nav>
             <div class="buttons">
-                <button class="button-v2" onclick="window.location.href='signup.html';">Log in</button>
+                <button class="button-v2" onclick="window.location.href='login.html';">Log in</button>
                 <button class="button-v1" onclick="window.location.href='signup.html';">Join now</button>
             </div>
         </header>
@@ -49,7 +48,7 @@
                         </g>
                         <g opacity="100%">
                           <rect filter="url(#filter_dshadow_0_0_0_00000014)" x="0" y="466" width="135" height="53" fill="#000" rx="2"></rect>
-                          <text x="35" y="498" font-family="Roboto" font-size="16" fill="#fff" letter-spacing="0" font-weight="600" font-style="normal">
+                          <text class="signup-button" x="35" y="498" font-family="Roboto" font-size="16" fill="#fff" letter-spacing="0" font-weight="600" font-style="normal">
                             <tspan>Join now</tspan>
                           </text>
                         </g>
@@ -58,7 +57,7 @@
                         </g>
                         <g opacity="100%">
                           <rect filter="url(#filter_dshadow_0_0_0_00000014)" x="161" y="466" width="183" height="53" fill="#000" rx="2"></rect>
-                          <text x="211.5" y="498" font-family="Roboto" font-size="16" fill="#fff" letter-spacing="0" font-weight="600" font-style="normal">
+                          <text id="about-button" x="211.5" y="498" font-family="Roboto" font-size="16" fill="#fff" letter-spacing="0" font-weight="600" font-style="normal">
                             <tspan>Learn more</tspan>
                           </text>
                         </g>
@@ -106,7 +105,7 @@
                         </g>
                         <g opacity="100%">
                           <rect filter="url(#filter_dshadow_0_0_0_00000014)" x="655" y="378" width="120" height="53" fill="#000" rx="2"></rect>
-                          <text x="671" y="410" font-family="Roboto" font-size="16" fill="#fff" letter-spacing="0" font-weight="600" font-style="normal">
+                          <text class="signup-button" x="671" y="410" font-family="Roboto" font-size="16" fill="#fff" letter-spacing="0" font-weight="600" font-style="normal">
                             <tspan>Explore now</tspan>
                           </text>
                         </g>
@@ -154,7 +153,7 @@
                         </g>
                         <g opacity="100%">
                           <rect filter="url(#filter_dshadow_0_0_0_00000014)" x="69" y="377" width="135" height="53" fill="#000" rx="2"></rect>
-                          <text x="104" y="409" font-family="Roboto" font-size="16" fill="#fff" letter-spacing="0" font-weight="600" font-style="normal">
+                          <text class="signup-button" x="104" y="409" font-family="Roboto" font-size="16" fill="#fff" letter-spacing="0" font-weight="600" font-style="normal">
                             <tspan>Join now</tspan>
                           </text>
                         </g>
@@ -212,7 +211,7 @@
                         </g>
                         <g opacity="100%">
                           <rect filter="url(#filter_dshadow_0_0_0_00000014)" x="0" y="328" width="120" height="53" fill="#000" rx="2"></rect>
-                          <text x="16.5" y="360" font-family="Roboto" font-size="16" fill="#fff" letter-spacing="0" font-weight="600" font-style="normal">
+                          <text class="signup-button" x="16.5" y="360" font-family="Roboto" font-size="16" fill="#fff" letter-spacing="0" font-weight="600" font-style="normal">
                             <tspan>Start saving</tspan>
                           </text>
                         </g>
@@ -360,7 +359,7 @@
                         </g>
                         <g opacity="100%">
                           <rect filter="url(#filter_dshadow_0_0_0_00000014)" x="76" y="314" width="208" height="53" fill="#000" rx="2"></rect>
-                          <text x="139" y="346" font-family="Roboto" font-size="16" fill="#fff" letter-spacing="0" font-weight="600" font-style="normal">
+                          <text class="signup-button" x="139" y="346" font-family="Roboto" font-size="16" fill="#fff" letter-spacing="0" font-weight="600" font-style="normal">
                             <tspan>Get Started</tspan>
                           </text>
                         </g>
@@ -413,6 +412,21 @@
             <p>2023 © CoffeeCulture All rights reserved.</p>
         </div>
     </footer>
+    <script>
+      document.querySelectorAll('.signup-button').forEach(function(svgButton) {
+          svgButton.addEventListener('click', function() {
+              this.style.fill = 'colorOnHover'; // Replace 'colorOnHover' with the desired color
+              window.location.href = 'signup.html';
+          });
+      });
+  
+      document.getElementById('about-button').addEventListener('click', function() {
+          // You can also change the color or style here if needed
+          window.location.href = 'about.html';
+      });
+  </script>
+  
+  
 </main>
 </body>
 </html>
