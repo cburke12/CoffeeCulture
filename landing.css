@@ -2,7 +2,8 @@ html, body {
     margin: 0 auto;
     padding: 0;
     font-family: 'Roboto', sans-serif;
-    max-width: 1200px;
+    max-width: 1440px;
+    min-width: 575px;
     justify-content: center;
 }
 
@@ -26,7 +27,7 @@ nav {
 
 .logo {
     color: #030303;
-    font-size: 24px;
+    font-size: 1.5vw; /* Responsive font size */
     font-weight: bold;
     line-height: 49px;
 }
@@ -42,7 +43,7 @@ li, li a {
     text-decoration: none;
     color: #000;
     margin: 0 3px;
-    font-size: 10px;
+    font-size: 0.8vw; /* Responsive font size */
     font-weight: 600;
     line-height: 21px;
     text-align: center;
@@ -61,7 +62,7 @@ li, li a {
     color: #000;
     margin: 0;
     font-weight: bold;
-    font-size: 10px;
+    font-size: 0.8vw; /* Responsive font size */
 }
 
 .button-v1 {
@@ -102,6 +103,10 @@ li, li a {
 
 /* Applying the animation to the SVG */
 .svg-container svg {
+    width: 94vw;   /* 84% of viewport width */
+    max-width: 1440px;
+    height: auto; 
+    display: block;
     animation: fadeInTop 1s ease forwards;
 }
 
@@ -124,4 +129,43 @@ li, li a {
     font-weight: 600;
     line-height: 21px;
     outline: none;
+}
+
+/*Footer Styles*/
+footer {
+    background-color: #f8f8f8; /* Assuming a light background */
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-nav a, .footer-social a, .footer-legal a {
+    display: inline-block;
+    margin: 0 10px;
+    color: #333;
+    text-decoration: none;
+}
+
+.footer-legal p {
+    margin-top: 10px;
+    color: #333;
+}
+
+
+@media (max-width: 600px) {
+    .footer-social a, .footer-nav a, .footer-legal a {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .logo, .button-v1, .button-v2, li, li a, .footer {
+        font-size: 2.5vw; /* Adjusted font size for smaller screens */
+    }
+}
+
+
+.footer-quote {
+    color: #ffffff;
+    padding: 2em;
+width: 100%;
+  background-color: #96c560;
 }
