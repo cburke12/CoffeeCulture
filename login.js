@@ -21,14 +21,20 @@ document.getElementById('login-form').addEventListener('submit', (e) => {
     const password = document.getElementById('password').value;
 
     signInWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-            console.log('User logged in:', userCredential.user);
-            window.location.href = 'index.html';
-        })
-        .catch((error) => {
-            console.error(error);
-            alert("Login failed: " + error.message);
-        });
+    .then((userCredential) => {
+        // Assuming the user's name is stored in a 'displayName' property
+        // Fall back to the email if the displayName is not available
+        const userName = userCredential.user.displayName || userCredential.user.email;
+        alert(`Hello, ${userName}, welcome, you are logged in`);
+
+        console.log('User logged in:', userCredential.user);
+        window.location.href = 'index.html';
+    })
+    .catch((error) => {
+        console.error(error);
+        alert("Login failed: " + error.message);
+    });
+
 });
 
 // Redirect to the signup page

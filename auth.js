@@ -35,14 +35,18 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         createUserWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-                console.log('User created:', userCredential.user);
-                window.location.href = 'index.html'; // Redirect after successful signup
-            })
-            .catch((error) => {
-                console.error(error);
-                alert("Signup failed: " + error.message);
-            });
+    .then((userCredential) => {
+        // Use the email to inform the user
+        alert(`Hello, ${email}, you have successfully signed up!`);
+
+        console.log('User created:', userCredential.user);
+        window.location.href = 'index.html'; // Redirect after successful signup
+    })
+    .catch((error) => {
+        console.error(error);
+        alert("Signup failed: " + error.message);
+    });
+
     });
 });
 
